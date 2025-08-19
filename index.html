@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دانلود کتاب سل بیگانه</title>
+    <link href="https://v1.fontapi.ir/css/Vazir" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazir', sans-serif;
+            direction: rtl;
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a1a, #2c2c2c); /* مشکی مدرن */
+            margin: 0;
+            padding: 20px;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #ffffff10; /* پس‌زمینه نیمه‌شفاف */
+            backdrop-filter: blur(10px); /* افکت شیشه‌ای */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid #ffffff20;
+        }
+        h1 {
+            color: #9b59b6; /* بنفش مدرن */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        p {
+            color: #ddd;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        .download-section, .payment-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #ffffff10;
+            border-radius: 10px;
+            border: 1px solid #ffffff20;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .download-section:hover, .payment-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        input[type="text"] {
+            padding: 12px;
+            width: 250px;
+            margin: 15px 0;
+            border: 2px solid #9b59b6;
+            border-radius: 8px;
+            background: #ffffff10;
+            color: #fff;
+            font-family: 'Vazir', sans-serif;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus {
+            border-color: #ffffff;
+            outline: none;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #9b59b6;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            transition: background 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+        .download-btn:hover {
+            background: #8e44ad;
+            transform: scale(1.05);
+        }
+        .error {
+            color: #e74c3c; /* قرمز مدرن */
+            display: none;
+            margin-top: 10px;
+            font-size: 1em;
+            animation: shake 0.3s ease;
+        }
+        .payment-section h3 {
+            color: #9b59b6;
+            margin-bottom: 15px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>دانلود کتاب سل بیگانه</h1>
+        
+        <!-- بخش دانلود با رمز -->
+        <div class="download-section">
+            <h3>دانلود کتاب</h3>
+            <p>لطفاً رمز فایل را وارد کنید تا فایل به‌صورت خودکار دانلود شود:</p>
+            <input type="text" id="password" placeholder="رمز را وارد کنید">
+            <button class="download-btn" onclick="checkPassword()">دانلود کتاب</button>
+            <p id="error" class="error">رمز اشتباه است!</p>
+        </div>
+
+        <!-- بخش پرداخت -->
+        <div class="payment-section">
+            <h3>نحوه خرید کتاب</h3>
+            <p>برای خرید کتاب به مبلغ <strong>۳۵,۰۰۰ تومان</strong>، وجه را به شماره کارت زیر واریز کنید:</p>
+            <p><strong>شماره کارت: 6219861848101409</strong></p>
+            <p>سپس رسید پرداخت را به شماره <strong>09059947584</strong> ارسال نمایید.</p>
+        </div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const error = document.getElementById('error');
+            const correctPassword = 'هیچ';
+            // لینک فایل PDF
+            const pdfLink = 'https://drive.google.com/uc?export=download&id=1ByYGiSWxY605SnxGiU9M9biQdQFs1rGH';
+
+            if (password === correctPassword) {
+                error.style.display = 'none';
+                window.location.href = pdfLink; // دانلود خودکار فایل
+            } else {
+                error.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
